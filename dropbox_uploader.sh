@@ -1509,7 +1509,9 @@ function db_sha_local
 ################
 
 #CHECKING FOR ENVIRONMENT VARIABLES
-if [ "${DBU_APPKEY}" != "" ] && [ "${DBU_APPSECRET}" != "" ] && [ "${DBU_OAUTH_ACCESS_TOKEN_SECRET}" != "" ] && [ "${DBU_OAUTH_ACCESS_TOKEN}" != "" ]; then
+if [ "${DBU_OAUTH_ACCESS_TOKEN}" != "" ]; then
+    OAUTH_ACCESS_TOKEN="${DBU_OAUTH_ACCESS_TOKEN}"
+elif [ "${DBU_APPKEY}" != "" ] && [ "${DBU_APPSECRET}" != "" ] && [ "${DBU_OAUTH_ACCESS_TOKEN_SECRET}" != "" ] && [ "${DBU_OAUTH_ACCESS_TOKEN}" != "" ]; then
 
     APPKEY="${DBU_APPKEY}"
     APPSECRET="${DBU_APPSECRET}"
